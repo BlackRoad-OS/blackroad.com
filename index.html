@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackRoad OS - Sovereign AI Infrastructure</title>
+    <meta name="description" content="BlackRoad OS - Building the future of sovereign, AI-native infrastructure. Enterprise-grade automation, multi-AI collaboration, and zero vendor lock-in.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --hot-pink: #FF1D6C;
+            --amber: #F5A623;
+            --electric-blue: #2979FF;
+            --violet: #9C27B0;
+            --black: #000000;
+            --white: #FFFFFF;
+            --phi: 1.618;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.618;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 34px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(255, 29, 108, 0.1) 0%, rgba(245, 166, 35, 0.1) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 29, 108, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(245, 166, 35, 0.15) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 144px;
+            margin-bottom: 34px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-21px); }
+        }
+
+        h1 {
+            font-size: 89px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--hot-pink) 38.2%, var(--amber) 61.8%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 21px;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 34px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 55px;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 21px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 89px;
+        }
+
+        .btn {
+            padding: 21px 55px;
+            font-size: 21px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--hot-pink) 38.2%, var(--amber) 61.8%);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 13px 34px rgba(255, 29, 108, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--hot-pink);
+        }
+
+        .btn-secondary:hover {
+            background: var(--hot-pink);
+            transform: translateY(-5px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 144px 0;
+        }
+
+        .section-title {
+            font-size: 55px;
+            text-align: center;
+            margin-bottom: 89px;
+            background: linear-gradient(135deg, var(--hot-pink) 38.2%, var(--amber) 61.8%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 34px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 55px 34px;
+            border-radius: 13px;
+            border: 1px solid rgba(255, 29, 108, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--hot-pink);
+            box-shadow: 0 13px 34px rgba(255, 29, 108, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 55px;
+            margin-bottom: 21px;
+        }
+
+        .feature-title {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 13px;
+            color: var(--hot-pink);
+        }
+
+        .feature-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+        }
+
+        /* Ecosystem Section */
+        .ecosystem {
+            padding: 144px 0;
+            background: linear-gradient(180deg, rgba(255, 29, 108, 0.05) 0%, transparent 100%);
+        }
+
+        .repos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 21px;
+        }
+
+        .repo-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 21px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--white);
+            display: block;
+        }
+
+        .repo-card:hover {
+            border-color: var(--hot-pink);
+            background: rgba(255, 29, 108, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .repo-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--hot-pink);
+        }
+
+        .repo-description {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            padding: 89px 0 55px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 34px;
+            margin-bottom: 34px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--hot-pink);
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 55px;
+            }
+
+            .tagline {
+                font-size: 21px;
+            }
+
+            .logo {
+                font-size: 89px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo">🖤</div>
+                <h1>BlackRoad OS</h1>
+                <p class="tagline">Sovereign AI Infrastructure for the Future</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/BlackRoad-OS" class="btn btn-primary">Explore Ecosystem</a>
+                    <a href="https://docs.blackroad.io" class="btn btn-secondary">Documentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why BlackRoad OS?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">Multi-AI Collaboration</h3>
+                    <p class="feature-description">Orchestrate Claude, ChatGPT, Grok, and more. Support for 1000+ AI agents at scale.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3 class="feature-title">Digital Sovereignty</h3>
+                    <p class="feature-description">Zero vendor lock-in. Own your infrastructure. Decentralized and secure by design.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Enterprise Performance</h3>
+                    <p class="feature-description">High-performance edge computing and AI inference acceleration for production workloads.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">DevOps Ready</h3>
+                    <p class="feature-description">CI/CD automation, deployment pipelines, and comprehensive monitoring out of the box.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Cloud Native</h3>
+                    <p class="feature-description">Kubernetes-ready, containerized, and designed for modern cloud infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Security First</h3>
+                    <p class="feature-description">Built-in security scanning, encryption, and compliance tools for enterprise needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section class="ecosystem">
+        <div class="container">
+            <h2 class="section-title">🌟 BlackRoad Ecosystem</h2>
+            <div class="repos-grid">
+                <a href="https://github.com/BlackRoad-OS/blackroad-os-window" class="repo-card">
+                    <div class="repo-name">🪟 BlackRoad OS Window</div>
+                    <div class="repo-description">Complete AI ecosystem in your browser</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/blackroad-multi-ai-system" class="repo-card">
+                    <div class="repo-name">🌌 Multi-AI System</div>
+                    <div class="repo-description">Multi-AI collaboration platform</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/developers-blackroad-io" class="repo-card">
+                    <div class="repo-name">👨‍💻 Developer Portal</div>
+                    <div class="repo-description">Documentation & APIs</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/editor-blackroadio" class="repo-card">
+                    <div class="repo-name">📝 Code Editor</div>
+                    <div class="repo-description">Online development environment</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/blackroad-os-jenkins" class="repo-card">
+                    <div class="repo-name">🔄 Jenkins CI/CD</div>
+                    <div class="repo-description">Automation & deployment</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/blackroad-athena" class="repo-card">
+                    <div class="repo-name">🦉 Athena</div>
+                    <div class="repo-description">AI code review agent</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/blackroad-ai-inference-accelerator" class="repo-card">
+                    <div class="repo-name">⚡ AI Accelerator</div>
+                    <div class="repo-description">High-performance inference</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/blackroad-knowledge-hub" class="repo-card">
+                    <div class="repo-name">📚 Knowledge Hub</div>
+                    <div class="repo-description">Learning management system</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/roadscheduler" class="repo-card">
+                    <div class="repo-name">⏰ RoadScheduler</div>
+                    <div class="repo-description">Job scheduling & cron system</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/roadsocket" class="repo-card">
+                    <div class="repo-name">🔌 RoadSocket</div>
+                    <div class="repo-description">TCP/UDP socket wrapper</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/blackroad-status-page" class="repo-card">
+                    <div class="repo-name">📈 Status Page</div>
+                    <div class="repo-description">System monitoring</div>
+                </a>
+                <a href="https://github.com/BlackRoad-OS/roadtranslate" class="repo-card">
+                    <div class="repo-name">🌐 RoadTranslate</div>
+                    <div class="repo-description">Translation & i18n</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/BlackRoad-OS">GitHub</a>
+                <a href="https://docs.blackroad.io">Documentation</a>
+                <a href="https://developers.blackroad.io">Developers</a>
+                <a href="https://store.blackroad.io">Store</a>
+                <a href="https://legal.blackroad.io">Legal</a>
+            </div>
+            <p class="copyright">
+                © 2026 BlackRoad OS, Inc. All Rights Reserved.<br>
+                🖤🛣️ Building the Future of Sovereign Computing 🛣️🖤
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
